@@ -10,12 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +29,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2OeUR1O4x04Ij2ePCxsnXrow0ZT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -53,6 +51,9 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
     "rider.external.source.directories": [
       "C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
       "C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
@@ -60,7 +61,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BeautySalon: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BeautySalon">
     <configuration name="BeautySalon" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -102,13 +103,23 @@
       <updated>1681920537998</updated>
       <workItem from="1681920550247" duration="3495000" />
       <workItem from="1681925991652" duration="157000" />
-      <workItem from="1681993453517" duration="2407000" />
+      <workItem from="1681993453517" duration="2936000" />
+      <workItem from="1681997320257" duration="1486000" />
     </task>
+    <task id="LOCAL-00001" summary="successfully builds and runs">
+      <created>1681996145685</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681996145685</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -122,5 +133,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="successfully builds and runs" />
+    <option name="LAST_COMMIT_MESSAGE" value="successfully builds and runs" />
   </component>
 </project>
