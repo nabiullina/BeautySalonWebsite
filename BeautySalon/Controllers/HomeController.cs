@@ -1,20 +1,24 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using BeautySalon.Data;
+using BeautySalon.Data.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BeautySalon.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly BeautysalonContext _beautySalonContext;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, BeautysalonContext beautySalonContext)
     {
         _logger = logger;
+        _beautySalonContext = beautySalonContext;
     }
 
     public IActionResult Index()
     {
+        var employees = _beautySalonContext.Employees.ToList();
         return View();
     }
 
@@ -23,4 +27,9 @@ public class HomeController : Controller
         return View();
     }
 
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View();
+    }
 }

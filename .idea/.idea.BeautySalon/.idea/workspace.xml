@@ -5,21 +5,25 @@
     <projectFile profileName="IIS Express">BeautySalon/BeautySalon.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/.name" beforeDir="false" />
+    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="connection works">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Clients/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Clients/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Shared/_ViewImports" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/_ViewImports.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -43,6 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -90,8 +95,16 @@
       <workItem from="1681920550247" duration="3495000" />
       <workItem from="1681925991652" duration="157000" />
       <workItem from="1682015348178" duration="1531000" />
-      <workItem from="1682079348573" duration="4997000" />
+      <workItem from="1682079348573" duration="8098000" />
     </task>
+    <task id="LOCAL-00001" summary="connection works">
+      <created>1682092085713</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682092085713</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,52 +123,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml</url>
-          <line>41</line>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" initialLine="44" isMultiMethodBreakpoint="true">
-            <option name="multiMethodBreakpoint" value="true" />
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Views/_ViewStart.cshtml</url>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Views/_ViewStart.cshtml" initialLine="0" isMultiMethodBreakpoint="true">
-            <option name="multiMethodBreakpoint" value="true" />
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Views/_ViewStart.cshtml</url>
-          <line>1</line>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Views/_ViewStart.cshtml" initialLine="1" isMultiMethodBreakpoint="true">
-            <option name="multiMethodBreakpoint" value="true" />
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="connection works" />
+    <option name="LAST_COMMIT_MESSAGE" value="connection works" />
   </component>
 </project>
