@@ -5,13 +5,85 @@
     <projectFile profileName="IIS Express">BeautySalon/BeautySalon.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="connection works">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Clients/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Clients/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/_ViewImports.cshtml" afterDir="false" />
+    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="stylesheets + controllers">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_23,_6_37_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23,_3_30_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23__3_30_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/AttendancesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/EmployeesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/PositionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/SchedulesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ServiceProvisionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ServicesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Attendances/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Attendances/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Attendances/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Attendances/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Attendances/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/ServiceProvisions/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/ServiceProvisions/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/ServiceProvisions/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/ServiceProvisions/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/ServiceProvisions/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/img/tesla.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +101,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/sagegirl/RiderProjects/BeautySalon/BeautySalon/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -95,7 +168,7 @@
       <workItem from="1681920550247" duration="3495000" />
       <workItem from="1681925991652" duration="157000" />
       <workItem from="1682015348178" duration="1531000" />
-      <workItem from="1682079348573" duration="8098000" />
+      <workItem from="1682079348573" duration="8468000" />
     </task>
     <task id="LOCAL-00001" summary="connection works">
       <created>1682092085713</created>
@@ -104,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682092085713</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="controllers work + stylesheets">
+      <created>1682098751273</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682098751273</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +204,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="connection works" />
-    <option name="LAST_COMMIT_MESSAGE" value="connection works" />
+    <MESSAGE value="controllers work + stylesheets" />
+    <MESSAGE value="stylesheets + controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="stylesheets + controllers" />
   </component>
 </project>
