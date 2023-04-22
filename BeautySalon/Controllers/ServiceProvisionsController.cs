@@ -21,7 +21,7 @@ namespace BeautySalon.Controllers
         // GET: ServiceProvisions
         public async Task<IActionResult> Index()
         {
-            var beautysalonContext = _context.Serviceprovisions.Include(s => s.Att).Include(s => s.Sch).Include(s => s.Ser);
+            var beautysalonContext = _context.Serviceprovisions.Include(s => s.Cli).Include(s => s.Sch).Include(s => s.Ser);
             return View(await beautysalonContext.ToListAsync());
         }
 
@@ -34,10 +34,10 @@ namespace BeautySalon.Controllers
             }
 
             var serviceprovision = await _context.Serviceprovisions
-                .Include(s => s.Att)
+                .Include(s => s.Cli)
                 .Include(s => s.Sch)
                 .Include(s => s.Ser)
-                .FirstOrDefaultAsync(m => m.Attid == id);
+                .FirstOrDefaultAsync(m => m.Cliid == id);
             if (serviceprovision == null)
             {
                 return NotFound();
@@ -49,7 +49,7 @@ namespace BeautySalon.Controllers
         // GET: ServiceProvisions/Create
         public IActionResult Create()
         {
-            ViewData["Attid"] = new SelectList(_context.Attendances, "Id", "Id");
+            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id");
             ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id");
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id");
             return View();
@@ -60,7 +60,7 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Attid,Serid,Schid")] Serviceprovision serviceprovision)
+        public async Task<IActionResult> Create([Bind("Cliid,Serid,Schid")] Serviceprovision serviceprovision)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace BeautySalon.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Attid"] = new SelectList(_context.Attendances, "Id", "Id", serviceprovision.Attid);
+            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id", serviceprovision.Cliid);
             ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id", serviceprovision.Schid);
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id", serviceprovision.Serid);
             return View(serviceprovision);
@@ -87,7 +87,7 @@ namespace BeautySalon.Controllers
             {
                 return NotFound();
             }
-            ViewData["Attid"] = new SelectList(_context.Attendances, "Id", "Id", serviceprovision.Attid);
+            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id", serviceprovision.Cliid);
             ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id", serviceprovision.Schid);
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id", serviceprovision.Serid);
             return View(serviceprovision);
@@ -98,9 +98,9 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Attid,Serid,Schid")] Serviceprovision serviceprovision)
+        public async Task<IActionResult> Edit(long id, [Bind("Cliid,Serid,Schid")] Serviceprovision serviceprovision)
         {
-            if (id != serviceprovision.Attid)
+            if (id != serviceprovision.Cliid)
             {
                 return NotFound();
             }
@@ -114,7 +114,7 @@ namespace BeautySalon.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ServiceprovisionExists(serviceprovision.Attid))
+                    if (!ServiceprovisionExists(serviceprovision.Cliid))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace BeautySalon.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Attid"] = new SelectList(_context.Attendances, "Id", "Id", serviceprovision.Attid);
+            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id", serviceprovision.Cliid);
             ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id", serviceprovision.Schid);
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id", serviceprovision.Serid);
             return View(serviceprovision);
@@ -140,10 +140,10 @@ namespace BeautySalon.Controllers
             }
 
             var serviceprovision = await _context.Serviceprovisions
-                .Include(s => s.Att)
+                .Include(s => s.Cli)
                 .Include(s => s.Sch)
                 .Include(s => s.Ser)
-                .FirstOrDefaultAsync(m => m.Attid == id);
+                .FirstOrDefaultAsync(m => m.Cliid == id);
             if (serviceprovision == null)
             {
                 return NotFound();
@@ -173,7 +173,7 @@ namespace BeautySalon.Controllers
 
         private bool ServiceprovisionExists(long id)
         {
-          return (_context.Serviceprovisions?.Any(e => e.Attid == id)).GetValueOrDefault();
+          return (_context.Serviceprovisions?.Any(e => e.Cliid == id)).GetValueOrDefault();
         }
     }
 }

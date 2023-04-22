@@ -14,9 +14,6 @@ public partial class BeautysalonContext : DbContext
         : base(options)
     {
     }
-
-    public virtual DbSet<Attendance> Attendances { get; set; }
-
     public virtual DbSet<Client> Clients { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
@@ -31,21 +28,6 @@ public partial class BeautysalonContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Attendance>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("attendances_pkey");
-
-            entity.ToTable("attendances");
-
-            entity.Property(e => e.Id)
-                .UseIdentityAlwaysColumn()
-                .HasColumnName("id");
-            entity.Property(e => e.Clientid).HasColumnName("clientid");
-
-            entity.HasOne(d => d.Client).WithMany(p => p.Attendances)
-                .HasForeignKey(d => d.Clientid)
-                .HasConstraintName("attendances_clientid_fkey");
-        });
 
         modelBuilder.Entity<Client>(entity =>
         {
@@ -154,18 +136,18 @@ public partial class BeautysalonContext : DbContext
 
         modelBuilder.Entity<Serviceprovision>(entity =>
         {
-            entity.HasKey(e => new { e.Attid, e.Serid }).HasName("pkserprov");
+            entity.HasKey(e => new { e.Cliid, e.Serid }).HasName("pkserprov");
 
             entity.ToTable("serviceprovisions");
 
-            entity.Property(e => e.Attid).HasColumnName("attid");
+            entity.Property(e => e.Cliid).HasColumnName("attid");
             entity.Property(e => e.Serid).HasColumnName("serid");
             entity.Property(e => e.Schid).HasColumnName("schid");
 
-            entity.HasOne(d => d.Att).WithMany(p => p.Serviceprovisions)
-                .HasForeignKey(d => d.Attid)
+            entity.HasOne(d => d.Cli).WithMany(p => p.Serviceprovisions)
+                .HasForeignKey(d => d.Cliid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fkattid");
+                .HasConstraintName("fkcliid");
 
             entity.HasOne(d => d.Sch).WithMany(p => p.Serviceprovisions)
                 .HasForeignKey(d => d.Schid)

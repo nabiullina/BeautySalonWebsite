@@ -7,7 +7,9 @@ public partial class Employee
 {
     public long Id { get; set; }
 
+    public string Surname { get; set; } = null!;
     public string Name { get; set; } = null!;
+    public string FathersName { get; set; } = null!;
 
     public decimal? Phone { get; set; }
 

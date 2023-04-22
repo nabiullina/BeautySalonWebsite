@@ -55,7 +55,7 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Phone")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Name,Phone")] Employee employee)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
         {
             if (id != employee.Id)
             {

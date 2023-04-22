@@ -34,18 +34,32 @@
 
     <ItemGroup>
       <Compile Remove="wwwroot\**" />
+      <Compile Remove="Controllers\AttendancesController.cs" />
+      <Compile Remove="Data\Models\Attendance.cs" />
+      <Compile Remove="Views\Attendances\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="wwwroot\**" />
+      <EmbeddedResource Remove="Views\Attendances\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="wwwroot\**" />
+      <None Remove="Views\Attendances\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Content Remove="wwwroot\**" />
+      <Content Remove="Views\Attendances\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Attendances\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Attendances\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Attendances\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Attendances\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Attendances\Index.cshtml" />
     </ItemGroup>
 
 </Project>
