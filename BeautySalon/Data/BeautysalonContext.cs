@@ -8,11 +8,13 @@ public partial class BeautysalonContext : DbContext
 {
     public BeautysalonContext()
     {
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
 
     public BeautysalonContext(DbContextOptions<BeautysalonContext> options)
         : base(options)
     {
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
     public virtual DbSet<Client> Clients { get; set; }
 
