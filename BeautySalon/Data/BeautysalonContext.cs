@@ -1,6 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using BeautySalon.Controllers;
 using Microsoft.EntityFrameworkCore;
+using BeautySalon.Data.Models;
+
 
 namespace BeautySalon.Data.Models;
 
@@ -21,6 +24,7 @@ public partial class BeautysalonContext : DbContext
     public virtual DbSet<Employee> Employees { get; set; }
 
     public virtual DbSet<Position> Positions { get; set; }
+    public virtual DbSet<EmployeesOnPosition> EmployeesOnPositions { get; set; }
 
     public virtual DbSet<Schedule> Schedules { get; set; }
 
@@ -60,25 +64,9 @@ public partial class BeautysalonContext : DbContext
                 .HasColumnName("name");
             entity.Property(e => e.Phone).HasColumnName("phone");
 
-            entity.HasMany(d => d.Pos).WithMany(p => p.Emps)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Employeesonposition",
-                    r => r.HasOne<Position>().WithMany()
-                        .HasForeignKey("Posid")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("fkposid"),
-                    l => l.HasOne<Employee>().WithMany()
-                        .HasForeignKey("Empid")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("fkempid"),
-                    j =>
-                    {
-                        j.HasKey("Empid", "Posid").HasName("pkemponposid");
-                        j.ToTable("employeesonpositions");
-                        j.IndexerProperty<long>("Empid").HasColumnName("empid");
-                        j.IndexerProperty<long>("Posid").HasColumnName("posid");
-                    });
+            //entity.HasMany(e => e.Pos).WithMany(p => p.Emps).UsingEntity(t => t.ToTable(("employeesonpositions")));
         });
+        
 
         modelBuilder.Entity<Position>(entity =>
         {
@@ -92,6 +80,9 @@ public partial class BeautysalonContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
+                
+            //entity.HasMany(e => e.Emps).WithMany(p => p.Pos).UsingEntity(t => t.ToTable(("employeesonpositions")));
+
         });
 
         modelBuilder.Entity<Schedule>(entity =>
@@ -142,7 +133,7 @@ public partial class BeautysalonContext : DbContext
 
             entity.ToTable("serviceprovisions");
 
-            entity.Property(e => e.Cliid).HasColumnName("attid");
+            entity.Property(e => e.Cliid).HasColumnName("cliid");
             entity.Property(e => e.Serid).HasColumnName("serid");
             entity.Property(e => e.Schid).HasColumnName("schid");
 
@@ -159,10 +150,33 @@ public partial class BeautysalonContext : DbContext
                 .HasForeignKey(d => d.Serid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fkserid");
+            
+            
         });
 
+        modelBuilder.Entity<EmployeesOnPosition>(entity =>
+        {
+            entity.HasKey(e => new { e.Empid, e.Posid }).HasName("pkemppos");
+
+            entity.ToTable("employeesonpositions");
+            entity.Property(e => e.Posid).HasColumnName("posid");
+            entity.Property(e => e.Empid).HasColumnName("empid");
+
+            entity.HasOne(d=>d.Emp).WithMany(p=>p.EmployeesOnPositions)
+                .HasForeignKey(d=>d.Empid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fkempid");
+            
+            entity.HasOne(d=>d.Pos).WithMany(p=>p.EmployeesOnPositions)
+                .HasForeignKey(d=>d.Posid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fkposid");
+        });
+        
+        
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    
 }

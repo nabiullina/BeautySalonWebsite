@@ -189,20 +189,17 @@ namespace BeautySalon.Migrations
                     b.ToTable("serviceprovisions", (string)null);
                 });
 
-            modelBuilder.Entity("Employeesonposition", b =>
+            modelBuilder.Entity("EmployeePosition", b =>
                 {
-                    b.Property<long>("Empid")
-                        .HasColumnType("bigint")
-                        .HasColumnName("empid");
+                    b.Property<long>("EmpsId")
+                        .HasColumnType("bigint");
 
-                    b.Property<long>("Posid")
-                        .HasColumnType("bigint")
-                        .HasColumnName("posid");
+                    b.Property<long>("PosId")
+                        .HasColumnType("bigint");
 
-                    b.HasKey("Empid", "Posid")
-                        .HasName("pkemponposid");
+                    b.HasKey("EmpsId", "PosId");
 
-                    b.HasIndex("Posid");
+                    b.HasIndex("PosId");
 
                     b.ToTable("employeesonpositions", (string)null);
                 });
@@ -253,19 +250,19 @@ namespace BeautySalon.Migrations
                     b.Navigation("Ser");
                 });
 
-            modelBuilder.Entity("Employeesonposition", b =>
+            modelBuilder.Entity("EmployeePosition", b =>
                 {
                     b.HasOne("BeautySalon.Data.Models.Employee", null)
                         .WithMany()
-                        .HasForeignKey("Empid")
-                        .IsRequired()
-                        .HasConstraintName("fkempid");
+                        .HasForeignKey("EmpsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BeautySalon.Data.Models.Position", null)
                         .WithMany()
-                        .HasForeignKey("Posid")
-                        .IsRequired()
-                        .HasConstraintName("fkposid");
+                        .HasForeignKey("PosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Client", b =>

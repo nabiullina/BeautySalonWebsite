@@ -21,8 +21,9 @@ namespace BeautySalon.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-              return _context.Employees != null ? 
-                          View(await _context.Employees.ToListAsync()) :
+            var many = await _context.Employees.Include("EmployeesOnPositions.Pos").ToListAsync();
+              return _context.Employees.Include("employeesonpositions") != null ? 
+                          View(many) :
                           Problem("Entity set 'BeautysalonContext.Employees'  is null.");
         }
 

@@ -14,6 +14,6 @@ public partial class Employee
     public decimal? Phone { get; set; }
 
     public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
-
-    public virtual ICollection<Position> Pos { get; set; } = new List<Position>();
+    
+    public virtual ICollection<EmployeesOnPosition> EmployeesOnPositions { get; set; } = new List<EmployeesOnPosition>();
 }

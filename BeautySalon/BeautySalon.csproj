@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="bootstrap" Version="5.3.0-alpha3" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.16" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.16" />
         <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="2.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.3.23174.2" />
@@ -32,6 +33,7 @@
       <Compile Remove="Controllers\AttendancesController.cs" />
       <Compile Remove="Data\Models\Attendance.cs" />
       <Compile Remove="Views\Attendances\**" />
+      <Compile Remove="Controllers\EmployeesOnPositionsController.cs" />
     </ItemGroup>
 
     <ItemGroup>

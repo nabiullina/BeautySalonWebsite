@@ -10,6 +10,6 @@ public partial class Position
     public string? Name { get; set; }
 
     public virtual ICollection<Service> Services { get; set; } = new List<Service>();
+    public virtual ICollection<EmployeesOnPosition> EmployeesOnPositions { get; set; } = new List<EmployeesOnPosition>();
 
-    public virtual ICollection<Employee> Emps { get; set; } = new List<Employee>();
 }
