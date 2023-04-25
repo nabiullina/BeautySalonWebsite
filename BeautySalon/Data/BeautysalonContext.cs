@@ -24,7 +24,7 @@ public partial class BeautysalonContext : DbContext
     public virtual DbSet<Employee> Employees { get; set; }
 
     public virtual DbSet<Position> Positions { get; set; }
-    public virtual DbSet<EmployeesOnPosition> EmployeesOnPositions { get; set; }
+   //public virtual DbSet<EmployeesOnPosition> EmployeesOnPositions { get; set; }
 
     public virtual DbSet<Schedule> Schedules { get; set; }
 

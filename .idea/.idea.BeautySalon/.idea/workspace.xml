@@ -9,19 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="stylesheets + controllers">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23__3_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23__3_30_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/EmployeesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/EmployeesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/Models/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/Models/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/Models/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/Models/Position.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Migrations/BeautysalonContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Migrations/BeautysalonContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,22 +26,23 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/16ff322917a0b83377f6ae31f36a3dc542555a7cbb850d5823f16e5a1fb4fa6/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/21a3b398f3380ce39bf79f68955f778c2919dbf1300c224c77e1b93625554/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2656e3487208acb3487490904326ac4e1fdc62459bbaf6dc682863a3c37a/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/642d9f16c9c555739ef4a95f47d58b898151bdbccd55cbbd1860ef78f8182/TypeUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff6e15065aca4366778dbe1a1b71b9164dea3534b71e1795c33fd6f159f52/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ad2a4b807aefd7738e919aa358fa13721e9a4848eb142d8849c2546109d81e1/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c09c2ce5107b877e7d30d6b1ce5e4c36cdd52749b6bedce0ba4056c294869653/Type.Helpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fd7e84c652acb74d1bb469c0db41fde874bfe844286f14882816f367e4e8e1/Type.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesOnPositionsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/EmployeesOnPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,24 +55,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Azalia\\AppData\\Local\\Symbols\\src"
-    ]
-  }
-}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BeautySalon">
     <configuration name="BeautySalon" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" />
@@ -172,27 +145,13 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesController.cs</url>
           <line>25</line>
-          <properties documentPath="D:\source\repos\ASP\beautysalonnew\BeautySalon\Controllers\EmployeesController.cs" initialLine="24" containingFunctionPresentation="Method 'Index'">
-            <startOffsets>
-              <option value="805" />
-            </startOffsets>
-            <endOffsets>
-              <option value="898" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\source\repos\ASP\beautysalonnew\BeautySalon\Controllers\EmployeesController.cs" initialLine="24" containingFunctionPresentation="Method 'Index'" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesController.cs</url>
           <line>24</line>
-          <properties documentPath="D:\source\repos\ASP\beautysalonnew\BeautySalon\Controllers\EmployeesController.cs" initialLine="24" containingFunctionPresentation="Method 'Index'">
-            <startOffsets>
-              <option value="701" />
-            </startOffsets>
-            <endOffsets>
-              <option value="898" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\source\repos\ASP\beautysalonnew\BeautySalon\Controllers\EmployeesController.cs" initialLine="24" containingFunctionPresentation="Method 'Index'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
