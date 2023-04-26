@@ -10,9 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="stylesheets + controllers">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/Models/ViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/Models/ViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/wwwroot/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/wwwroot/css/bootstrap.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +37,15 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesOnPositionsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/EmployeesOnPosition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesOnPositionsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/EmployeesOnPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,6 +57,10 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BeautySalon">
     <configuration name="BeautySalon" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -100,6 +107,8 @@
       <workItem from="1682015348178" duration="1531000" />
       <workItem from="1682079348573" duration="8468000" />
       <workItem from="1682103941086" duration="22711000" />
+      <workItem from="1682508082824" duration="3343000" />
+      <workItem from="1682524430907" duration="5079000" />
     </task>
     <task id="LOCAL-00001" summary="connection works">
       <created>1682092085713</created>
@@ -154,7 +163,116 @@
           <properties documentPath="D:\source\repos\ASP\beautysalonnew\BeautySalon\Controllers\EmployeesController.cs" initialLine="24" containingFunctionPresentation="Method 'Index'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs</url>
+          <line>39</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" initialLine="27" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1308" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1331" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" initialLine="26" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1065" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1066" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs</url>
+          <line>41</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" initialLine="29" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1355" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1384" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs</url>
+          <line>42</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" initialLine="30" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1397" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1431" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs</url>
+          <line>48</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" initialLine="35" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1702" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1732" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
+          <line>59</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="59" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1779" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1802" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
+          <line>60</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="60" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1815" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1816" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
+          <line>58</line>
+          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="58" containingFunctionPresentation="method 'Create'">
+            <startOffsets>
+              <option value="1765" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1766" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="((System.Data.Entity.Validation.DbEntityValidationException)$exception).EntityValidationErrors" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

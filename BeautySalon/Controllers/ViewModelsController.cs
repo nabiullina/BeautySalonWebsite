@@ -1,27 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
 using BeautySalon.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
+using ModelError = Microsoft.AspNetCore.Mvc.ModelBinding.ModelError;
+using ModelState = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry;
+using SelectList = Microsoft.AspNetCore.Mvc.Rendering.SelectList;
 
 namespace BeautySalon.Controllers;
 
-public class ViewModelController : Controller
+public class ViewModelsController : Controller
 {
-    // GET
-    public IActionResult Index()
+    private readonly BeautysalonContext _context;
+
+    
+    public ViewModelsController(BeautysalonContext context)
     {
-        return View();
+        _context = context;
     }
     
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
+    public IActionResult Create()
     {
-        if (ModelState.IsValid)
+        ViewData["PosId"] = new SelectList(_context.Positions, "Id", "Id");
+        ViewData["EmpId"] = new SelectList(_context.Employees, "Id", "Id");
+        return View();
+    }
+
+    [Microsoft.AspNetCore.Mvc.HttpPost]
+    [Microsoft.AspNetCore.Mvc.ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Microsoft.AspNetCore.Mvc.Bind("Employee")] ViewModel model)
+    {
+        foreach (ModelState modelState in ViewData.ModelState.Values)
         {
-            _context.Add(employee);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            foreach (ModelError error in modelState.Errors)
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
         }
-        return View(employee);
+        if (ModelState.IsValid)
+        { 
+            _context.Add(model.Employee);
+            await _context.SaveChangesAsync();
+            
+            model.EmployeesOnPosition.Posid = model.EmployeesOnPosition.Pos.Id;
+            model.EmployeesOnPosition.Empid = model.Employee.Id;
+            _context.Add(model.EmployeesOnPosition);
+            await _context.SaveChangesAsync();
+            return Redirect("/Employees");
+        }
+        return View();
     }
 }
