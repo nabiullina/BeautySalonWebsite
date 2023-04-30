@@ -21,8 +21,8 @@ public class ViewModelsController : Controller
     
     public IActionResult Create()
     {
-        ViewData["PosId"] = new SelectList(_context.Positions, "Id", "Id");
-        ViewData["EmpId"] = new SelectList(_context.Employees, "Id", "Id");
+        ViewData["Pos"] = new SelectList(_context.Positions, "Name", "Name");
+        // ViewData["EmpId"] = new SelectList(_context.Employees, "Id", "Id");
         return View();
     }
 
