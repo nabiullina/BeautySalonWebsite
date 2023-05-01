@@ -28,26 +28,14 @@ public class ViewModelsController : Controller
 
     [Microsoft.AspNetCore.Mvc.HttpPost]
     [Microsoft.AspNetCore.Mvc.ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Microsoft.AspNetCore.Mvc.Bind("Employee")] ViewModel model)
+    public async Task<IActionResult> Create([Microsoft.AspNetCore.Mvc.Bind("Employee", "EmployeesOnPosition")] ViewModel model)
     {
-        foreach (ModelState modelState in ViewData.ModelState.Values)
-        {
-            foreach (ModelError error in modelState.Errors)
-            {
-                Console.WriteLine(error.ErrorMessage);
-            }
-        }
-        if (ModelState.IsValid)
-        { 
-            _context.Add(model.Employee);
+        
+        _context.Add(model.Employee);
             await _context.SaveChangesAsync();
-            
-            model.EmployeesOnPosition.Posid = model.EmployeesOnPosition.Pos.Id;
             model.EmployeesOnPosition.Empid = model.Employee.Id;
             _context.Add(model.EmployeesOnPosition);
             await _context.SaveChangesAsync();
             return Redirect("/Employees");
-        }
-        return View();
     }
 }
