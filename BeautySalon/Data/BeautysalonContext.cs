@@ -63,9 +63,8 @@ public partial class BeautysalonContext : DbContext
                 .HasColumnType("character varying")
                 .HasColumnName("name");
             entity.Property(e => e.Phone).HasColumnName("phone");
-
-            //entity.HasMany(e => e.Pos).WithMany(p => p.Emps).UsingEntity(t => t.ToTable(("employeesonpositions")));
         });
+        
         
 
         modelBuilder.Entity<Position>(entity =>
@@ -80,9 +79,6 @@ public partial class BeautysalonContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
-                
-            //entity.HasMany(e => e.Emps).WithMany(p => p.Pos).UsingEntity(t => t.ToTable(("employeesonpositions")));
-
         });
 
         modelBuilder.Entity<Schedule>(entity =>

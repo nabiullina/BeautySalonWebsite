@@ -21,21 +21,21 @@ public class ViewModelsController : Controller
     
     public IActionResult Create()
     {
-        ViewData["Pos"] = new SelectList(_context.Positions, "Name", "Name");
+        ViewData["Pos"] = new SelectList(_context.Positions, "Id", "Name");
         // ViewData["EmpId"] = new SelectList(_context.Employees, "Id", "Id");
         return View();
     }
 
     [Microsoft.AspNetCore.Mvc.HttpPost]
     [Microsoft.AspNetCore.Mvc.ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Microsoft.AspNetCore.Mvc.Bind("Employee", "EmployeesOnPosition")] ViewModel model)
+    public async Task<IActionResult> Create(
+        [Microsoft.AspNetCore.Mvc.Bind("Employee", "EmployeesOnPosition")] ViewModel model)
     {
-        
         _context.Add(model.Employee);
-            await _context.SaveChangesAsync();
-            model.EmployeesOnPosition.Empid = model.Employee.Id;
-            _context.Add(model.EmployeesOnPosition);
-            await _context.SaveChangesAsync();
-            return Redirect("/Employees");
+        await _context.SaveChangesAsync();
+        model.EmployeesOnPosition.Empid = model.Employee.Id;
+        _context.Add(model.EmployeesOnPosition);
+        await _context.SaveChangesAsync();
+        return Redirect("/Employees");
     }
 }
