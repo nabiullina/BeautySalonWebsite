@@ -169,7 +169,6 @@ public partial class BeautysalonContext : DbContext
                 .HasConstraintName("fkposid");
         });
         
-        
         OnModelCreatingPartial(modelBuilder);
     }
 
