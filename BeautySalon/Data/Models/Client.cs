@@ -11,7 +11,7 @@ public partial class Client
     public string Name { get; set; } = null!;
     public string FathersName { get; set; } = null!;
 
-    public decimal? Phone { get; set; }
+    public long? Phone { get; set; }
 
     public virtual ICollection<Serviceprovision> Serviceprovisions { get; set; } = new List<Serviceprovision>();
 }

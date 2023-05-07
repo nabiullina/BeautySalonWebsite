@@ -11,9 +11,10 @@ public partial class Employee
     public string Name { get; set; } = null!;
     public string FathersName { get; set; } = null!;
 
-    public decimal? Phone { get; set; }
+    public long? Phone { get; set; }
 
     public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
     
     public virtual ICollection<EmployeesOnPosition> EmployeesOnPositions { get; set; } = new List<EmployeesOnPosition>();
+    
 }
