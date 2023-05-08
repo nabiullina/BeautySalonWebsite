@@ -8,16 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23,_3_30_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_23__3_30_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="полностью работает добавление сотрудника+должности">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/Models/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/Models/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/AddPos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/AddPos.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +122,7 @@
       <workItem from="1682508082824" duration="3343000" />
       <workItem from="1682524430907" duration="5079000" />
       <workItem from="1683100614368" duration="780000" />
-      <workItem from="1683293452995" duration="8272000" />
+      <workItem from="1683293452995" duration="18104000" />
     </task>
     <task id="LOCAL-00001" summary="connection works">
       <created>1682092085713</created>
@@ -142,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682098751273</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="полностью работает добавление сотрудника+должности">
+      <created>1683480628904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683480628904</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +168,8 @@
     <MESSAGE value="connection works" />
     <MESSAGE value="controllers work + stylesheets" />
     <MESSAGE value="stylesheets + controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="stylesheets + controllers" />
+    <MESSAGE value="полностью работает добавление сотрудника+должности" />
+    <option name="LAST_COMMIT_MESSAGE" value="полностью работает добавление сотрудника+должности" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

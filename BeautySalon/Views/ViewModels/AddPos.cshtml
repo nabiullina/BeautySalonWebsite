@@ -40,6 +40,8 @@
                 @foreach (var itemPos in Model.Employee.EmployeesOnPositions)
                 {
                     <li>
+                        <a asp-action="DelPos" asp-route-empid="@itemPos.Empid" asp-route-posid="@itemPos.Posid">Удалить</a>
+                        @* <a asp-action="DelPos" asp-route="@itemPos.Empid">кнопка</a> *@
                         @Html.DisplayFor(modelItem => itemPos.Pos.Name)
                     </li>
                 }

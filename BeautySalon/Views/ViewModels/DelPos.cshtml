@@ -1,0 +1,22 @@
+@model BeautySalon.Data.Models.ViewModel
+
+@{
+    ViewData["Title"] = "DelPos";
+}
+    <br/>
+
+<h1>Уволить с должности</h1>
+    <br/>
+
+<h4>Вы уверены, что хотите удалить должность
+    <i style="color: crimson">@Model.EmployeesOnPosition.Pos.Name </i><br/> работника <i style="color: crimson">@Model.Employee.Surname @Model.Employee.Name @Model.Employee.FathersName</i></h4>
+    <br/>
+
+<div>
+    <br/>
+    <form asp-action="DelPos">
+        @* <input type="hidden" asp-    for="Id" /> *@
+        <input type="submit" value="Delete" class="btn btn-danger"/> |
+        <a asp-action="AddPos">Back to List</a>
+    </form>
+</div>

@@ -60,6 +60,32 @@ public class ViewModelsController : Controller
         _context.Add(model.EmployeesOnPosition);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(AddPos));
+    }
+    
+    [Route ("ViewModels/DelPos/{empid?}/{posid}")]
+    public async Task<IActionResult> DelPos(long empid, long posid)
+    {
+        var employees = _context.Employees.Include("EmployeesOnPositions.Pos").Where(emp=>emp.Id==empid);
+        var emp = await employees.FirstAsync();
+        ViewData["Pos"] = new SelectList(_context.Positions, "Id", "Name");
+        var viewmodel = new ViewModel
+        {
+            Employee = emp,
+            EmployeesOnPosition = new EmployeesOnPosition {Empid = emp.Id, Posid = posid, Pos = await _context.Positions.FindAsync(posid)}
+        };
+        return View(viewmodel);
+    }
 
+    
+    
+    [HttpPost, ActionName("DelPos")]
+    [ValidateAntiForgeryToken]
+    [Route ("ViewModels/DelPos/{empid?}/{posid}")]
+    public async Task<IActionResult> DelPosConfirmed(long empid, long posid)
+    {
+        var emponpos = await _context.EmployeesOnPositions.FindAsync(empid, posid);
+        _context.EmployeesOnPositions.Remove(emponpos);
+        await _context.SaveChangesAsync();
+        return Redirect($"/ViewModels/AddPos/{empid}");
     }
 }
