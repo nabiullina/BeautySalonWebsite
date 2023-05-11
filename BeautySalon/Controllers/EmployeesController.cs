@@ -75,7 +75,8 @@ namespace BeautySalon.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employees.FindAsync(id);
+            var employees = _context.Employees.Include("EmployeesOnPositions.Pos").Where(emp=>emp.Id==id);
+            var employee = employees.First();
             if (employee == null)
             {
                 return NotFound();

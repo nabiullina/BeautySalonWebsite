@@ -59,7 +59,7 @@ public class ViewModelsController : Controller
         model.EmployeesOnPosition.Empid = id;
         _context.Add(model.EmployeesOnPosition);
         await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(AddPos));
+        return Redirect("/Employees/Edit/"+id);
     }
     
     [Route ("ViewModels/DelPos/{empid?}/{posid}")]
@@ -75,8 +75,6 @@ public class ViewModelsController : Controller
         };
         return View(viewmodel);
     }
-
-    
     
     [HttpPost, ActionName("DelPos")]
     [ValidateAntiForgeryToken]
@@ -88,4 +86,18 @@ public class ViewModelsController : Controller
         await _context.SaveChangesAsync();
         return Redirect($"/ViewModels/AddPos/{empid}");
     }
+
+    // public async Task<IActionResult> ViewSchedule(long empid)
+    // {
+    //     var employees = _context.Employees.Include("Schedules").Where(emp=>emp.Id==empid);
+    //     var schedule = _context.Schedules.Include("Serviceprovision");
+    //     var employee = employees.FirstOrDefault();
+    //     var viewmodel = new ViewModel
+    //     {
+    //         Employee = employee,
+    //         Schedule = await _context.Schedules.FindAsync(empi.d),
+    //         Serviceprovision = new Serviceprovision() {Schid = }
+    //     }
+    //     return View(viewmodel)
+    // }
 }

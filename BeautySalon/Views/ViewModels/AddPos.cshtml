@@ -1,4 +1,3 @@
-@using BeautySalon.Data.Models
 @model BeautySalon.Data.Models.ViewModel
 
 @{
@@ -15,20 +14,17 @@
             <div class="form-group">
                 @Html.DisplayFor(modelItem => modelItem.Employee.Surname)
                 @* <label asp-for="Employee.Surname" class="control-label"></label> *@
-                @* <input asp-for="Surname" class="form-control" /> *@
-                @* <span asp-validation-for="Surname" class="text-danger"></span> *@
-            </div>
-            <div class="form-group">
+                @* <input asp-for="Employee.Surname" class="form-control" /> *@
+                @* <span asp-validation-for="Employee.Surname" class="text-danger"></span> *@
                 @Html.DisplayFor(modelItem => modelItem.Employee.Name)
                 @* <label asp-for="Employee.Name" class="control-label"></label> *@
-                @* <input asp-for="Name" class="form-control" /> *@
-                @* <span asp-validation-for="Name" class="text-danger"></span> *@
-            </div>
-            <div class="form-group">
+                @* <input asp-for="Employee.Name" class="form-control" /> *@
+                @* <span asp-validation-for="Employee.Name" class="text-danger"></span> *@
+            
                 @Html.DisplayFor(modelItem => modelItem.Employee.FathersName)
                 @* <label asp-for="Employee.FathersName" class="control-label"></label> *@
-                @* <input asp-for="FathersName" class="form-control" /> *@
-                @* <span asp-validation-for="FathersName" class="text-danger"></span> *@
+                @* <input asp-for="Employee.FathersName" class="form-control" /> *@
+                @* <span asp-validation-for="Employee.FathersName" class="text-danger"></span> *@
             </div>
             <div class="form-group">
                 @Html.DisplayFor(modelItem => modelItem.Employee.Phone)
@@ -47,13 +43,14 @@
                 }
             </div>
             <div class="form-group">
-                <label asp-for="EmployeesOnPosition.Posid" class="control-label"></label>
+                @* <label asp-for="EmployeesOnPosition.Posid" class="control-label"></label> *@
+                Должность
                 <select asp-for="EmployeesOnPosition.Posid" class="form-control" asp-items="ViewBag.Pos"></select>
                 <span asp-validation-for="EmployeesOnPosition.Posid" class="text-danger"></span>
             </div>
             
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary"/>
+                <input type="submit" value="Добавить должность" class="btn btn-primary"/>
             </div>
             
         </form>
