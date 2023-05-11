@@ -1,0 +1,42 @@
+@model BeautySalon.Data.Models.ViewModel
+
+@{
+    ViewData["Title"] = "ViewSchedule";
+}
+
+<h1>Расписание</h1>
+
+<h4>Работник:<i>
+    @Html.DisplayFor(modelItem => @Model.Employee.Surname)
+    @Html.DisplayFor(modelItem => @Model.Employee.Name)
+    @Html.DisplayFor(modelItem => @Model.Employee.FathersName)
+    </i> 
+</h4>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Дата</th>
+        <th>Статус</th>
+        <th>Имя клиента</th>
+        <th>Номер телефона клиента</th>
+        <th>Услуга</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in @Model.Employee.Schedules)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.Name)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
