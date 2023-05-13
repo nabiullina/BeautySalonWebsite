@@ -15,5 +15,5 @@ public partial class Schedule
 
     public virtual Employee? Emp { get; set; }
 
-    public virtual ICollection<Serviceprovision> Serviceprovisions { get; set; } = new List<Serviceprovision>();
+    public virtual Serviceprovision Serviceprovision { get; set; }
 }

@@ -7,17 +7,18 @@
 <h1>Расписание</h1>
 
 <h4>Работник:<i>
-    @Html.DisplayFor(modelItem => @Model.Employee.Surname)
-    @Html.DisplayFor(modelItem => @Model.Employee.Name)
-    @Html.DisplayFor(modelItem => @Model.Employee.FathersName)
+        @Html.DisplayFor(modelItem=> @Model.Employee.Surname)
+        @Html.DisplayFor(modelItem=> @Model.Employee.Name)
+        @Html.DisplayFor(modelItem=> @Model.Employee.FathersName)
     </i> 
 </h4>
 
 <table class="table">
     <thead>
     <tr>
+        @* <th>Id</th> *@
         <th>Дата</th>
-        <th>Статус</th>
+        @* <th>Статус</th> *@
         <th>Имя клиента</th>
         <th>Номер телефона клиента</th>
         <th>Услуга</th>
@@ -27,14 +28,25 @@
     @foreach (var item in @Model.Employee.Schedules)
     {
         <tr>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.Id) *@
+            @* </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.Status) *@
+            @* </td> *@
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
+                @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.Surname)
+                @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.Name)
+                @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.FathersName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Emp.Name)
+                @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serviceprovision.Ser.Name)
             </td>
         </tr>
     }

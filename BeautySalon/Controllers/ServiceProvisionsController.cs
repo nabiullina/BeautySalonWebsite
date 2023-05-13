@@ -47,11 +47,10 @@ namespace BeautySalon.Controllers
         }
 
         // GET: ServiceProvisions/Create
-        public IActionResult Create()
+        public IActionResult Create(long cliid)
         {
-            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id");
-            ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id");
-            ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id");
+            ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Date");
+            ViewData["Serid"] = new SelectList(_context.Services, "Id", "Name");
             return View();
         }
 
@@ -60,7 +59,7 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Cliid,Serid,Schid")] Serviceprovision serviceprovision)
+        public async Task<IActionResult> Create(long cliid, [Bind("Serid, Schid")] Serviceprovision serviceprovision)
         {
             if (ModelState.IsValid)
             {
@@ -68,9 +67,6 @@ namespace BeautySalon.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Cliid"] = new SelectList(_context.Clients, "Id", "Id", serviceprovision.Cliid);
-            ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Id", serviceprovision.Schid);
-            ViewData["Serid"] = new SelectList(_context.Services, "Id", "Id", serviceprovision.Serid);
             return View(serviceprovision);
         }
 

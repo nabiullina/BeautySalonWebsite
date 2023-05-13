@@ -18,8 +18,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var employees = _beautySalonContext.Employees.ToList();
-        return View();
+        var services = _beautySalonContext.Services.ToList();
+        return View(services);
     }
 
     public IActionResult Privacy()

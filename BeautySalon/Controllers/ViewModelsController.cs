@@ -87,17 +87,39 @@ public class ViewModelsController : Controller
         return Redirect($"/ViewModels/AddPos/{empid}");
     }
 
-    // public async Task<IActionResult> ViewSchedule(long empid)
+    public async Task<IActionResult> ViewSchedule(long empid)
+    {
+        var viewmodel = new ViewModel
+        {
+            Employee = await _context.Employees
+                .Include("Schedules.Serviceprovision.Cli")
+                .Include("Schedules.Serviceprovision.Ser")
+                .Where(emp => emp.Id == empid)
+                .FirstOrDefaultAsync()
+        };
+        return View(viewmodel);
+    }
+    
+    // [Route("ViewModels/AddSerProv/{cliid?}/{serid}")]
+    // 
+    // public async Task<IActionResult> AddSerProv(long cliid, [Bind("")])
     // {
-    //     var employees = _context.Employees.Include("Schedules").Where(emp=>emp.Id==empid);
-    //     var schedule = _context.Schedules.Include("Serviceprovision");
-    //     var employee = employees.FirstOrDefault();
-    //     var viewmodel = new ViewModel
-    //     {
-    //         Employee = employee,
-    //         Schedule = await _context.Schedules.FindAsync(empi.d),
-    //         Serviceprovision = new Serviceprovision() {Schid = }
-    //     }
-    //     return View(viewmodel)
+    //     
+    //     return View();
     // }
+    //
+    // [HttpPost, ActionName("AddSerProv")]
+    // [Route("ViewModels/AddSerProv/{cliid?}/{serid}")]
+    // public async Task<IActionResult> AddSerProvCli(long cliid, long serid)
+    // {
+    //     var viewModels = new List<ViewModel>();
+    //     var clients = await _context.Clients.ToListAsync();
+    //     foreach (var client in clients)
+    //     {
+    //         viewModels.Add(new ViewModel {Client = client});
+    //     }
+    //
+    //     return View(viewModels);
+    // }
+    
 }

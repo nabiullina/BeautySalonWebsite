@@ -138,8 +138,8 @@ public partial class BeautysalonContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fkcliid");
 
-            entity.HasOne(d => d.Sch).WithMany(p => p.Serviceprovisions)
-                .HasForeignKey(d => d.Schid)
+            entity.HasOne(d => d.Sch).WithOne(p => p.Serviceprovision)
+                .HasForeignKey<Serviceprovision>(d => d.Schid)
                 .HasConstraintName("fkschid");
 
             entity.HasOne(d => d.Ser).WithMany(p => p.Serviceprovisions)
