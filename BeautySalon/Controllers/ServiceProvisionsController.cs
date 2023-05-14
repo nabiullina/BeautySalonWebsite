@@ -47,11 +47,13 @@ namespace BeautySalon.Controllers
         }
 
         // GET: ServiceProvisions/Create
-        public IActionResult Create(long cliid)
+        [Route ("ServiceProvisions/Create/{cliid}")]
+        public async Task<IActionResult> Create(long? cliid)
         {
+            var client = await _context.Clients.FindAsync(cliid);
             ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Date");
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Name");
-            return View();
+            return View(new Serviceprovision {Cli = client});
         }
 
         // POST: ServiceProvisions/Create
@@ -59,15 +61,17 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route ("ServiceProvisions/Create/{cliid}")]
         public async Task<IActionResult> Create(long cliid, [Bind("Serid, Schid")] Serviceprovision serviceprovision)
         {
-            if (ModelState.IsValid)
-            {
+            serviceprovision.Cliid = cliid;
+            // if (ModelState.IsValid)
+            // {
                 _context.Add(serviceprovision);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(serviceprovision);
+            // }
+            // return View(serviceprovision);
         }
 
         // GET: ServiceProvisions/Edit/5
