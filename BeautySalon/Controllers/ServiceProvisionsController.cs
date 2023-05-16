@@ -51,7 +51,7 @@ namespace BeautySalon.Controllers
         public async Task<IActionResult> Create(long? cliid)
         {
             var client = await _context.Clients.FindAsync(cliid);
-            ViewData["Schid"] = new SelectList(_context.Schedules, "Id", "Date");
+            ViewData["Schid"] = new SelectList(_context.Schedules.Where(sch=>sch.Status=='-'), "Id", "Date");
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Name");
             return View(new Serviceprovision {Cli = client});
         }
@@ -65,8 +65,12 @@ namespace BeautySalon.Controllers
         public async Task<IActionResult> Create(long cliid, [Bind("Serid, Schid")] Serviceprovision serviceprovision)
         {
             serviceprovision.Cliid = cliid;
+            serviceprovision.Sch = await _context.Schedules.FindAsync(serviceprovision.Schid);
+            serviceprovision.Sch.Status = '+';
+            
             // if (ModelState.IsValid)
             // {
+            _context.Update(serviceprovision.Sch);
                 _context.Add(serviceprovision);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

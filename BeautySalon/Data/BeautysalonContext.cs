@@ -125,7 +125,7 @@ public partial class BeautysalonContext : DbContext
 
         modelBuilder.Entity<Serviceprovision>(entity =>
         {
-            entity.HasKey(e => new { e.Cliid, e.Serid }).HasName("pkserprov");
+            entity.HasKey(e => e.Schid).HasName("pkserprov");
 
             entity.ToTable("serviceprovisions");
 

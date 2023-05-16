@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -45,10 +46,12 @@ namespace BeautySalon.Controllers
         }
 
         // GET: Schedules/Create
-        public IActionResult Create()
+        [Route ("Schedules/Create/{empid}")]
+        public async Task<IActionResult> Create(long empid)
         {
-            ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Id");
-            return View();
+            var emp = await _context.Employees.FindAsync(empid);
+            // ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Name");
+            return View(new Schedule {Emp = emp, Empid = empid});
         }
 
         // POST: Schedules/Create
@@ -56,15 +59,18 @@ namespace BeautySalon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,Status,Empid")] Schedule schedule)
+        [Route ("Schedules/Create/{empid}")]
+        public async Task<IActionResult> Create(long empid, [Bind("Date")] Schedule schedule)
         {
+            schedule.Status = '-';
+            schedule.Empid = empid;
             if (ModelState.IsValid)
             {
                 _context.Add(schedule);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Id", schedule.Empid);
+            ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Name", schedule.Empid);
             return View(schedule);
         }
 

@@ -17,7 +17,7 @@ namespace BeautySalon.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0-preview.3.23174.2")
+                .HasAnnotation("ProductVersion", "6.0.16")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -40,8 +40,8 @@ namespace BeautySalon.Migrations
                         .HasColumnType("character varying")
                         .HasColumnName("name");
 
-                    b.Property<decimal?>("Phone")
-                        .HasColumnType("numeric")
+                    b.Property<long?>("Phone")
+                        .HasColumnType("bigint")
                         .HasColumnName("phone");
 
                     b.Property<string>("Surname")
@@ -72,8 +72,8 @@ namespace BeautySalon.Migrations
                         .HasColumnType("character varying")
                         .HasColumnName("name");
 
-                    b.Property<decimal?>("Phone")
-                        .HasColumnType("numeric")
+                    b.Property<long?>("Phone")
+                        .HasColumnType("bigint")
                         .HasColumnName("phone");
 
                     b.Property<string>("Surname")
@@ -84,6 +84,24 @@ namespace BeautySalon.Migrations
                         .HasName("employees_pkey");
 
                     b.ToTable("employees", (string)null);
+                });
+
+            modelBuilder.Entity("BeautySalon.Data.Models.EmployeesOnPosition", b =>
+                {
+                    b.Property<long>("Empid")
+                        .HasColumnType("bigint")
+                        .HasColumnName("empid");
+
+                    b.Property<long>("Posid")
+                        .HasColumnType("bigint")
+                        .HasColumnName("posid");
+
+                    b.HasKey("Empid", "Posid")
+                        .HasName("pkemppos");
+
+                    b.HasIndex("Posid");
+
+                    b.ToTable("employeesonpositions", (string)null);
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Position", b =>
@@ -167,41 +185,45 @@ namespace BeautySalon.Migrations
 
             modelBuilder.Entity("BeautySalon.Data.Models.Serviceprovision", b =>
                 {
+                    b.Property<long?>("Schid")
+                        .HasColumnType("bigint")
+                        .HasColumnName("schid");
+
                     b.Property<long>("Cliid")
                         .HasColumnType("bigint")
-                        .HasColumnName("attid");
+                        .HasColumnName("cliid");
 
                     b.Property<long>("Serid")
                         .HasColumnType("bigint")
                         .HasColumnName("serid");
 
-                    b.Property<long?>("Schid")
-                        .HasColumnType("bigint")
-                        .HasColumnName("schid");
-
-                    b.HasKey("Cliid", "Serid")
+                    b.HasKey("Schid")
                         .HasName("pkserprov");
 
-                    b.HasIndex("Schid");
+                    b.HasIndex("Cliid");
 
                     b.HasIndex("Serid");
 
                     b.ToTable("serviceprovisions", (string)null);
                 });
 
-            modelBuilder.Entity("EmployeePosition", b =>
+            modelBuilder.Entity("BeautySalon.Data.Models.EmployeesOnPosition", b =>
                 {
-                    b.Property<long>("EmpsId")
-                        .HasColumnType("bigint");
+                    b.HasOne("BeautySalon.Data.Models.Employee", "Emp")
+                        .WithMany("EmployeesOnPositions")
+                        .HasForeignKey("Empid")
+                        .IsRequired()
+                        .HasConstraintName("fkempid");
 
-                    b.Property<long>("PosId")
-                        .HasColumnType("bigint");
+                    b.HasOne("BeautySalon.Data.Models.Position", "Pos")
+                        .WithMany("EmployeesOnPositions")
+                        .HasForeignKey("Posid")
+                        .IsRequired()
+                        .HasConstraintName("fkposid");
 
-                    b.HasKey("EmpsId", "PosId");
+                    b.Navigation("Emp");
 
-                    b.HasIndex("PosId");
-
-                    b.ToTable("employeesonpositions", (string)null);
+                    b.Navigation("Pos");
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Schedule", b =>
@@ -233,8 +255,10 @@ namespace BeautySalon.Migrations
                         .HasConstraintName("fkcliid");
 
                     b.HasOne("BeautySalon.Data.Models.Schedule", "Sch")
-                        .WithMany("Serviceprovisions")
-                        .HasForeignKey("Schid")
+                        .WithOne("Serviceprovision")
+                        .HasForeignKey("BeautySalon.Data.Models.Serviceprovision", "Schid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fkschid");
 
                     b.HasOne("BeautySalon.Data.Models.Service", "Ser")
@@ -250,21 +274,6 @@ namespace BeautySalon.Migrations
                     b.Navigation("Ser");
                 });
 
-            modelBuilder.Entity("EmployeePosition", b =>
-                {
-                    b.HasOne("BeautySalon.Data.Models.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("EmpsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BeautySalon.Data.Models.Position", null)
-                        .WithMany()
-                        .HasForeignKey("PosId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BeautySalon.Data.Models.Client", b =>
                 {
                     b.Navigation("Serviceprovisions");
@@ -272,17 +281,22 @@ namespace BeautySalon.Migrations
 
             modelBuilder.Entity("BeautySalon.Data.Models.Employee", b =>
                 {
+                    b.Navigation("EmployeesOnPositions");
+
                     b.Navigation("Schedules");
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Position", b =>
                 {
+                    b.Navigation("EmployeesOnPositions");
+
                     b.Navigation("Services");
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Schedule", b =>
                 {
-                    b.Navigation("Serviceprovisions");
+                    b.Navigation("Serviceprovision")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeautySalon.Data.Models.Service", b =>

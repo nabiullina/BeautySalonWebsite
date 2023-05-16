@@ -44,7 +44,16 @@ public class ViewModelsController : Controller
         var employees = _context.Employees.Include("EmployeesOnPositions.Pos").Where(emp=>emp.Id==id);
         var emp = await employees.FirstAsync();
 
-        ViewData["Pos"] = new SelectList(_context.Positions, "Id", "Name");
+        var takenPos = _context.EmployeesOnPositions.Where(emponpos=>emponpos.Empid==id);
+        IEnumerable<Position> poses = _context.Positions;
+        foreach (var pos in takenPos)
+        {
+            if (emp.EmployeesOnPositions.Contains(pos))
+            {
+                poses = poses.Where(p => p.Id != pos.Posid);
+            }
+        }
+        ViewData["Pos"] = new SelectList(poses, "Id", "Name"); // await _context.Positions.Where(p=> _context.EmployeesOnPositions.FindAsync(p.Id) = false)
         var viewmodel = new ViewModel
         {
             Employee = emp

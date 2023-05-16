@@ -15,5 +15,5 @@ public partial class Schedule
 
     public virtual Employee? Emp { get; set; }
 
-    public virtual Serviceprovision Serviceprovision { get; set; }
+    public virtual Serviceprovision? Serviceprovision { get; set; }
 }

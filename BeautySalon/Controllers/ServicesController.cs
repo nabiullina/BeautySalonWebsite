@@ -47,7 +47,7 @@ namespace BeautySalon.Controllers
         // GET: Services/Create
         public IActionResult Create()
         {
-            ViewData["Posid"] = new SelectList(_context.Positions, "Id", "Id");
+            ViewData["Posid"] = new SelectList(_context.Positions, "Id", "Name");
             return View();
         }
 
