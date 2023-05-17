@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BeautySalon.Data.Models;
+using SQLitePCL;
 
 namespace BeautySalon.Controllers
 {
@@ -51,8 +52,8 @@ namespace BeautySalon.Controllers
         public async Task<IActionResult> Create(long? cliid)
         {
             var client = await _context.Clients.FindAsync(cliid);
-            ViewData["Schid"] = new SelectList(_context.Schedules.Where(sch=>sch.Status=='-'), "Id", "Date");
             ViewData["Serid"] = new SelectList(_context.Services, "Id", "Name");
+            ViewData["Schid"] = new SelectList(_context.Schedules.Where(sch=>sch.Status=='-'), "Id", "Date");
             return View(new Serviceprovision {Cli = client});
         }
 
@@ -179,5 +180,7 @@ namespace BeautySalon.Controllers
         {
           return (_context.Serviceprovisions?.Any(e => e.Cliid == id)).GetValueOrDefault();
         }
+        
+        
     }
 }

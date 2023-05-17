@@ -46,26 +46,26 @@ namespace BeautySalon.Controllers
         }
 
         // GET: Employees/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+        // public IActionResult Create()
+        // {
+        //     return View();
+        // }
 
         // POST: Employees/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(employee);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(employee);
-        }
+        // public async Task<IActionResult> Create([Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _context.Add(employee);
+        //         await _context.SaveChangesAsync();
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(employee);
+        // }
 
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -159,6 +159,12 @@ namespace BeautySalon.Controllers
         private bool EmployeeExists(long id)
         {
           return (_context.Employees?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+        
+        public async Task<IActionResult> GetEmpsServices(long empid)
+        {
+            return View(await _context.Employees.Include("EmployeesOnPositions.Pos.Services")
+                .Where(emp => emp.Id == empid).FirstOrDefaultAsync());
         }
     }
 }

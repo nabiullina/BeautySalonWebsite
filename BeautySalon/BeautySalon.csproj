@@ -50,6 +50,7 @@
     <ItemGroup>
       <Content Remove="wwwroot\**" />
       <Content Remove="Views\Attendances\**" />
+      <Content Remove="Views\Employees\Create.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,0 +1,34 @@
+@model BeautySalon.Data.Models.Employee
+
+@{
+    ViewData["Title"] = "EmpsServices";
+}
+
+<h2>@Model.Surname @Model.Name @Model.FathersName</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Должность</th>
+        <th>Услуги</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.EmployeesOnPositions) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pos.Name)
+            </td>
+            <td>
+                @foreach (var itemPos in item.Pos.Services)
+                {
+                    <li>
+                        @Html.DisplayFor(modelItem => itemPos.Name)
+                    </li>
+                }
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

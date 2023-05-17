@@ -26,6 +26,11 @@ namespace BeautySalon.Controllers
                           Problem("Entity set 'BeautysalonContext.Positions'  is null.");
         }
 
+        public async Task<IActionResult> PosServices(long? posid)
+        {
+            return View(await _context.Positions.Include("Services").Where(p => p.Id == posid).FirstOrDefaultAsync());
+        }
+
         // GET: Positions/Details/5
         public async Task<IActionResult> Details(long? id)
         {
