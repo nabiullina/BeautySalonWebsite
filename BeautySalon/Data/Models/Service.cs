@@ -11,7 +11,7 @@ public partial class Service
 
     public string? About { get; set; }
 
-    public long? Posid { get; set; }
+    public long Posid { get; set; }
 
     public virtual Position? Pos { get; set; }
 

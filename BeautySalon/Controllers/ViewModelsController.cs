@@ -109,6 +109,66 @@ public class ViewModelsController : Controller
         return View(viewmodel);
     }
 
+    [Route("ViewModels/SelectService/{cliid?}")]
+    public async Task<IActionResult> SelectService(long? cliid)
+    {
+        var services = await _context.Services.ToListAsync();
+        // var client = await _context.Clients.FindAsync(cliid);
+        // foreach (var ser in services)
+        // {
+        //     viewmodel.Add(new ViewModel {Service = ser, Client = client});
+        // }
+        var model = new ViewModel {Client = await _context.Clients.FindAsync(cliid)};
+        ViewData["serid"] = new SelectList(services, "Id", "Name");
+        return View(model);
+    }
+    
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Route("ViewModels/SelectService/{cliid?}")]
+    public async Task<IActionResult> SelectService(long cliid, [Bind("Serviceprovision")] ViewModel model)
+    {
+        // model.Serviceprovision.Cliid = cliid;
+        return Redirect($"/ViewModels/SelectTime/{cliid}/{model.Serviceprovision.Serid}");
+        // return Redirect($"/ViewModels/AddPos/{empid}");
+
+    }
+
+    [Route("ViewModels/SelectTime/{cliid?}/{serid?}")]
+    public async Task<IActionResult> SelectTime(long cliid, long serid)
+    {
+        var service = await _context.Services.FindAsync(serid);
+        // var position = await _context.Positions.FindAsync(service.Posid);
+        var emponpos = await _context.EmployeesOnPositions.Where(ep=>ep.Posid == service.Posid).ToListAsync();
+        var employees = new List<Employee>();
+        foreach (var item in emponpos)
+        {
+            var emp = await _context.Employees.Include("EmployeesOnPositions")
+                .Where(e => e.EmployeesOnPositions.Contains(item)).FirstOrDefaultAsync();
+            employees.Add(emp);
+        }
+        // var employees = await _context.Employees.Where(e =>
+            // e.EmployeesOnPositions.Contains()).ToListAsync();
+    
+    /*new KeyValuePair<string, long> {Key = "Empid", } <"Empid", e.Id> KeyValuePair<"Posid", service.Posid>*/
+        // var schedules = await _context.Schedules.Where(sch=>sch.Emp)
+        var schedules = await _context.Schedules.Include("Emp").Where(sch => employees.Contains(sch.Emp) && sch.Status=='-').ToListAsync();
+        ViewData["schid"] = new SelectList(schedules, "Id", "Date");
+        return View(new ViewModel {Client = await _context.Clients.FindAsync(cliid), Service = await _context.Services.FindAsync(serid)});
+    }
+    
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Route("ViewModels/SelectTime/{cliid?}/{serid?}")]
+    public async Task<IActionResult> SelectTime(long cliid, long serid, [Bind("Serviceprovision")] ViewModel model)
+    {
+        model.Serviceprovision.Cliid = cliid;
+        model.Serviceprovision.Serid = serid;
+
+        _context.Add(model.Serviceprovision);
+        _context.SaveChanges();
+        return Redirect($"/Home/Index");
+    }
     // [Route("ViewModels/AddSerProv/{cliid?}/{serid}")]
     // 
     // public async Task<IActionResult> AddSerProv(long cliid, [Bind("")])
