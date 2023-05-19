@@ -27,46 +27,6 @@ namespace BeautySalon.Controllers
                           Problem("Entity set 'BeautysalonContext.Employees'  is null.");
         }
 
-        // GET: Employees/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.Employees == null)
-            {
-                return NotFound();
-            }
-
-            var employee = await _context.Employees
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (employee == null)
-            {
-                return NotFound();
-            }
-
-            return View(employee);
-        }
-
-        // GET: Employees/Create
-        // public IActionResult Create()
-        // {
-        //     return View();
-        // }
-
-        // POST: Employees/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Create([Bind("Id,Surname,Name,FathersName,Phone")] Employee employee)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         _context.Add(employee);
-        //         await _context.SaveChangesAsync();
-        //         return RedirectToAction(nameof(Index));
-        //     }
-        //     return View(employee);
-        // }
-
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {

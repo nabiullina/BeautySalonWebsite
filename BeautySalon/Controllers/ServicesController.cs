@@ -25,25 +25,6 @@ namespace BeautySalon.Controllers
             return View(await beautysalonContext.ToListAsync());
         }
 
-        // GET: Services/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.Services == null)
-            {
-                return NotFound();
-            }
-
-            var service = await _context.Services
-                .Include(s => s.Pos)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (service == null)
-            {
-                return NotFound();
-            }
-
-            return View(service);
-        }
-
         // GET: Services/Create
         public IActionResult Create()
         {

@@ -1,26 +1,31 @@
 @model IEnumerable<BeautySalon.Data.Models.Schedule>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Расписание";
 }
 
-<h1>Index</h1>
+<h1>Расписание</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новое</a>
 </p>
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Имя: </label>
+        <input name="name" class="form-control" />
+ 
+        <label class="control-label">Компания: </label>
+        <select name="company" asp-items="ViewBag.Employees" class="form-control"></select>
+ 
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Emp)
-            </th>
+            <th>Дата</th>
+            <th>Статус</th>
+            <th>Работник</th>
             <th></th>
         </tr>
     </thead>
@@ -34,12 +39,13 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Emp.Surname)
                 @Html.DisplayFor(modelItem => item.Emp.Name)
+                @Html.DisplayFor(modelItem => item.Emp.FathersName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }

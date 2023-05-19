@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BeautySalon.Data.Models;
 
 public partial class Schedule
 {
     public long Id { get; set; }
-
-    public DateTime Date { get; set; } = DateTime.Now;
+    
+    [BindProperty, DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+    public DateTime Date { get; set; }
 
     public char Status { get; set; }
 

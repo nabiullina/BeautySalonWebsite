@@ -22,27 +22,8 @@ namespace BeautySalon.Controllers
         // GET: Schedules
         public async Task<IActionResult> Index()
         {
-            var beautysalonContext = _context.Schedules.Include(s => s.Emp);
-            return View(await beautysalonContext.ToListAsync());
-        }
-
-        // GET: Schedules/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.Schedules == null)
-            {
-                return NotFound();
-            }
-
-            var schedule = await _context.Schedules
-                .Include(s => s.Emp)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (schedule == null)
-            {
-                return NotFound();
-            }
-
-            return View(schedule);
+            var schedules = await _context.Schedules.Include(s => s.Emp).ToListAsync();
+            return View(schedules);
         }
 
         // GET: Schedules/Create

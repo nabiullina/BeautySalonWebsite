@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using BeautySalon.Data.Models;
 using Microsoft.EntityFrameworkCore;
-// using System.Data.Entity;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
-using ModelError = Microsoft.AspNetCore.Mvc.ModelBinding.ModelError;
 using ModelState = Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry;
 using SelectList = Microsoft.AspNetCore.Mvc.Rendering.SelectList;
 
@@ -26,8 +24,8 @@ public class ViewModelsController : Controller
         return View();
     }
 
-    [Microsoft.AspNetCore.Mvc.HttpPost]
-    [Microsoft.AspNetCore.Mvc.ValidateAntiForgeryToken]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
         [Bind("Employee", "EmployeesOnPosition")] ViewModel model)
     {
@@ -108,16 +106,26 @@ public class ViewModelsController : Controller
         };
         return View(viewmodel);
     }
+    
+    [Route("ViewModels/ClientServices/{cliid?}")]
+    public async Task<IActionResult> ClientServices(long cliid)
+    {
+        var viewmodel = new ViewModel
+        {
+            Client = await _context.Clients
+                .Include("Serviceprovisions.Sch.Emp")
+                .Include("Serviceprovisions.Ser")
+                .Include("Serviceprovisions")
+                .Where(cli => cli.Id == cliid)
+                .FirstOrDefaultAsync()
+        };
+        return View(viewmodel);
+    }
 
     [Route("ViewModels/SelectService/{cliid?}")]
-    public async Task<IActionResult> SelectService(long? cliid)
+    public async Task<IActionResult> SelectService(long cliid)
     {
         var services = await _context.Services.ToListAsync();
-        // var client = await _context.Clients.FindAsync(cliid);
-        // foreach (var ser in services)
-        // {
-        //     viewmodel.Add(new ViewModel {Service = ser, Client = client});
-        // }
         var model = new ViewModel {Client = await _context.Clients.FindAsync(cliid)};
         ViewData["serid"] = new SelectList(services, "Id", "Name");
         return View(model);
@@ -128,10 +136,7 @@ public class ViewModelsController : Controller
     [Route("ViewModels/SelectService/{cliid?}")]
     public async Task<IActionResult> SelectService(long cliid, [Bind("Serviceprovision")] ViewModel model)
     {
-        // model.Serviceprovision.Cliid = cliid;
         return Redirect($"/ViewModels/SelectTime/{cliid}/{model.Serviceprovision.Serid}");
-        // return Redirect($"/ViewModels/AddPos/{empid}");
-
     }
 
     [Route("ViewModels/SelectTime/{cliid?}/{serid?}")]
@@ -164,10 +169,14 @@ public class ViewModelsController : Controller
     {
         model.Serviceprovision.Cliid = cliid;
         model.Serviceprovision.Serid = serid;
+        model.Schedule = await _context.Schedules.FindAsync(model.Serviceprovision.Schid);
+        model.Schedule.Status = '+';
+        _context.Update(model.Schedule);
+
 
         _context.Add(model.Serviceprovision);
         _context.SaveChanges();
-        return Redirect($"/Home/Index");
+        return Redirect($"/ViewModels/ClientServices/{cliid}");
     }
     // [Route("ViewModels/AddSerProv/{cliid?}/{serid}")]
     // 

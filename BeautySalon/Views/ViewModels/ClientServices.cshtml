@@ -1,0 +1,54 @@
+@model BeautySalon.Data.Models.ViewModel
+
+@{
+    ViewData["Title"] = "Услуги клиента";
+}
+
+<h1>Услуги</h1>
+
+<h4>Клиент:<i>
+        @Html.DisplayFor(modelItem=> @Model.Client.Surname)
+        @Html.DisplayFor(modelItem=> @Model.Client.Name)
+        @Html.DisplayFor(modelItem=> @Model.Client.FathersName)
+    </i> 
+</h4>
+
+<p>
+    <a class="btn btn-primary" asp-action="SelectService" asp-route-cliid="@Model.Client.Id">Записать на услугу</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Дата</th>
+        <th>Услуга</th>
+        <th>Мастер</th>
+        <th>Номер телефона мастера</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in @Model.Client.Serviceprovisions)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sch.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ser.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sch.Emp.Surname)
+                @Html.DisplayFor(modelItem => item.Sch.Emp.Name)
+                @Html.DisplayFor(modelItem => item.Sch.Emp.FathersName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sch.Emp.Phone)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index" asp-controller="Clients">Вернуться к списку</a>
+</div>
