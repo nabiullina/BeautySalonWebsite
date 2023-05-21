@@ -20,10 +20,19 @@ namespace BeautySalon.Controllers
         }
 
         // GET: Schedules
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(DateTime? date)
         {
-            var schedules = await _context.Schedules.Include(s => s.Emp).ToListAsync();
-            return View(schedules);
+            // users = users.Where(p => p.Name.Contains(name));
+            
+            var schedules = _context.Schedules.Include("Emp").Include("Serviceprovision.Ser");
+            if (date.HasValue)
+            {
+                DateTime startDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, 0, 0, 0);
+                DateTime endDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, 23, 59, 59);
+                schedules = schedules.Where(s => s.Date > startDate && s.Date < endDate);
+            }
+            var s = schedules.ToList().OrderBy(p=>p.Date);
+            return View(s);
         }
 
         // GET: Schedules/Create
@@ -49,10 +58,10 @@ namespace BeautySalon.Controllers
             {
                 _context.Add(schedule);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/ViewModels/ViewSchedule/{empid}");
             }
-            ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Name", schedule.Empid);
-            return View(schedule);
+            // ViewData["Empid"] = new SelectList(_context.Employees, "Id", "Name", schedule.Empid);
+            return Redirect($"/ViewModels/ViewSchedule/{empid}");
         }
 
         // GET: Schedules/Edit/5
@@ -137,13 +146,14 @@ namespace BeautySalon.Controllers
                 return Problem("Entity set 'BeautysalonContext.Schedules'  is null.");
             }
             var schedule = await _context.Schedules.FindAsync(id);
+            var empid = schedule.Empid;
             if (schedule != null)
             {
                 _context.Schedules.Remove(schedule);
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/ViewModels/ViewSchedule/{empid}");
         }
 
         private bool ScheduleExists(long id)

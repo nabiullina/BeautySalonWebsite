@@ -14,33 +14,38 @@
 </h4>
 
 <p>
-     <a class="btn btn-primary" asp-action="Create" asp-controller="Schedules" asp-route-empid="@Model.Employee.Id">Create New</a>
+     <a class="btn btn-primary" asp-action="Create" asp-controller="Schedules" asp-route-empid="@Model.Employee.Id">Создать новое</a>
  </p>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Дата: </label>
+        <input type="datetime-local" name="date" class="form-control" />
+        <input type="submit" value="Фильтр" class="btn btn-primary" />
+    </div>
+</form>
 
 <table class="table">
     <thead>
     <tr>
-        @* <th>Id</th> *@
         <th>Дата</th>
-        @* <th>Статус</th> *@
+        <th>Статус</th>
         <th>Клиента</th>
         <th>Номер телефона клиента</th>
         <th>Услуга</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     @foreach (var item in @Model.Employee.Schedules)
     {
         <tr>
-            @* <td> *@
-            @*     @Html.DisplayFor(modelItem => item.Id) *@
-            @* </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
-            @* <td> *@
-            @*     @Html.DisplayFor(modelItem => item.Status) *@
-            @* </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.Surname)
                 @Html.DisplayFor(modelItem => item.Serviceprovision.Cli.Name)
@@ -52,7 +57,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Serviceprovision.Ser.Name)
             </td>
+            <td>
+                @{
+                    if (item.Status == '-')
+                    {
+                        <a asp-action="Delete" asp-controller="Schedules" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+                    }
+                }
+            </td>
         </tr>
+        
     }
     </tbody>
 </table>
+
+<a asp-action="Index" asp-controller="Employees">Вернуться к списку работников</a>

@@ -8,12 +8,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="полностью работает добавление сотрудника+должности">
+    <list default="true" id="5f4c02a9-6500-40cc-bb58-b3be94f69ef2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BeautySalon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/SchedulesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/SchedulesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/ServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ServicesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Controllers/ViewModelsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Employees/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Positions/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Positions/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Positions/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Positions/PosServices.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Positions/PosServices.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Delete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Schedules/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Services/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Services/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/Services/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/Services/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/AddPos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/AddPos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/SelectService.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/SelectService.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/SelectTime.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/SelectTime.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/ViewSchedule.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BeautySalon/Views/ViewModels/ViewSchedule.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +51,25 @@
       </map>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Views/Employees/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Controllers/EmployeesOnPositionsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/507accbbc59a3ffe2b66842d075e8a334b1941b49efcaf9c4bef4d3f3d43b7d/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/EmployeesOnPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/449b441523c469ed34ff5a5e14f0bafcd8f097aa463655303dc19048fa44ac3/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dff30923ae48e67877428855b5b88b3a2977246d48353381817513137b1cf/RuntimeModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/Models/Client.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BeautySalon/Data/BeautysalonContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,23 +83,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Azalia\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Azalia\\AppData\\Local\\Symbols\\src&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BeautySalon">
     <configuration name="BeautySalon" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BeautySalon/BeautySalon.csproj" />
@@ -123,6 +137,25 @@
       <workItem from="1682524430907" duration="5079000" />
       <workItem from="1683100614368" duration="780000" />
       <workItem from="1683293452995" duration="18104000" />
+      <workItem from="1683812448848" duration="55000" />
+      <workItem from="1683812978278" duration="1246000" />
+      <workItem from="1683815019176" duration="5103000" />
+      <workItem from="1683838172548" duration="36000" />
+      <workItem from="1683838230926" duration="28000" />
+      <workItem from="1683900125266" duration="2019000" />
+      <workItem from="1684007387431" duration="5906000" />
+      <workItem from="1684090665916" duration="2083000" />
+      <workItem from="1684102372314" duration="646000" />
+      <workItem from="1684249749404" duration="422000" />
+      <workItem from="1684250415109" duration="5421000" />
+      <workItem from="1684264257593" duration="46000" />
+      <workItem from="1684336733528" duration="4190000" />
+      <workItem from="1684426309956" duration="343000" />
+      <workItem from="1684427636311" duration="8056000" />
+      <workItem from="1684499327638" duration="3574000" />
+      <workItem from="1684508196302" duration="2578000" />
+      <workItem from="1684529878452" duration="67000" />
+      <workItem from="1684656836097" duration="7872000" />
     </task>
     <task id="LOCAL-00001" summary="connection works">
       <created>1682092085713</created>
@@ -145,7 +178,63 @@
       <option name="project" value="LOCAL" />
       <updated>1683480628904</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="schedule">
+      <created>1683838199240</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683838199240</updated>
+    </task>
+    <task id="LOCAL-00005" summary="view schedule">
+      <created>1683838251068</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683838251068</updated>
+    </task>
+    <task id="LOCAL-00006" summary="addserprovision">
+      <created>1684013665625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684013665625</updated>
+    </task>
+    <task id="LOCAL-00007" summary="addserprov">
+      <created>1684103057288</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684103057288</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add pos fixes + add sesrviceprovision">
+      <created>1684264288476</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684264288476</updated>
+    </task>
+    <task id="LOCAL-00009" summary="positions list, emps services">
+      <created>1684343219018</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684343219018</updated>
+    </task>
+    <task id="LOCAL-00010" summary="запись на услугу работает!!!!!!!!!!!">
+      <created>1684436364307</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684436364307</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixes and style">
+      <created>1684529931681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684529931681</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,52 +258,22 @@
     <MESSAGE value="controllers work + stylesheets" />
     <MESSAGE value="stylesheets + controllers" />
     <MESSAGE value="полностью работает добавление сотрудника+должности" />
-    <option name="LAST_COMMIT_MESSAGE" value="полностью работает добавление сотрудника+должности" />
+    <MESSAGE value="schedule" />
+    <MESSAGE value="view schedule" />
+    <MESSAGE value="addserprovision" />
+    <MESSAGE value="addserprov" />
+    <MESSAGE value="add pos fixes + add sesrviceprovision" />
+    <MESSAGE value="positions list, emps services" />
+    <MESSAGE value="запись на услугу работает!!!!!!!!!!!" />
+    <MESSAGE value="fixes and style" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes and style" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
-          <line>59</line>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="59" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="1779" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1802" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
-          <line>60</line>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="60" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="1815" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1816" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs</url>
-          <line>58</line>
-          <properties documentPath="$PROJECT_DIR$/BeautySalon/Controllers/ClientsController.cs" initialLine="58" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="1765" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1766" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#BeautySalon.Data.Models.ViewModel" memberName="Client" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="LaunchSettings">
         <watch expression="((System.Data.Entity.Validation.DbEntityValidationException)$exception).EntityValidationErrors" language="C#" />

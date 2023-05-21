@@ -6,26 +6,21 @@
 
 <h1>Расписание</h1>
 
-<p>
-    <a asp-action="Create">Создать новое</a>
-</p>
 <form method="get">
     <div class="form-inline form-group">
-        <label class="control-label">Имя: </label>
-        <input name="name" class="form-control" />
- 
-        <label class="control-label">Компания: </label>
-        <select name="company" asp-items="ViewBag.Employees" class="form-control"></select>
- 
-        <input type="submit" value="Фильтр" class="btn btn-default" />
+        <label class="control-label">Дата: </label>
+        <input type="datetime-local" name="date" class="form-control" />
+        <input type="submit" value="Фильтр" class="btn btn-primary" />
     </div>
 </form>
+
 <table class="table">
     <thead>
         <tr>
             <th>Дата</th>
             <th>Статус</th>
             <th>Работник</th>
+            <th>Услуга</th>
             <th></th>
         </tr>
     </thead>
@@ -43,6 +38,7 @@
                 @Html.DisplayFor(modelItem => item.Emp.Name)
                 @Html.DisplayFor(modelItem => item.Emp.FathersName)
             </td>
+            <td>@Html.DisplayFor(modelItem=>item.Serviceprovision.Ser.Name)</td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>

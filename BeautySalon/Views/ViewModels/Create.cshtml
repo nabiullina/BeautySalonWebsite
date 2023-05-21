@@ -2,49 +2,49 @@
 @model BeautySalon.Data.Models.ViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Создание";
 }
 
-<h1>Employeeees</h1>
+<h1>Работник</h1>
 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Employee.Surname" class="control-label"></label>
+                Фамилия
                 <input asp-for="Employee.Surname" class="form-control" />
                 <span asp-validation-for="Employee.Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Employee.Name" class="control-label"></label>
+                Имя
                 <input asp-for="Employee.Name" class="form-control" />
                 <span asp-validation-for="Employee.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Employee.FathersName" class="control-label"></label>
+                Отчество
                 <input asp-for="Employee.FathersName " class="form-control" />
                 <span asp-validation-for="Employee.FathersName" class="text-danger"></span>
             </div>            
             <div class="form-group">
-                <label asp-for="Employee.Phone" class="control-label"></label>
+                Номер телефона
                 <input asp-for="Employee.Phone" class="form-control" />
                 <span asp-validation-for="Employee.Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EmployeesOnPosition.Posid" class="control-label"></label>
+                Должность
                 <select asp-for="EmployeesOnPosition.Posid" class="form-control" asp-items="ViewBag.Pos"></select>
                 <span asp-validation-for="EmployeesOnPosition.Posid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" asp-controller="Employees">Back to List</a>
+    <a asp-action="Index" asp-controller="Employees">Вернуться к списку</a>
 </div>
 
 @section Scripts {

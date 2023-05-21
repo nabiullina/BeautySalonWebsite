@@ -94,7 +94,8 @@ public class ViewModelsController : Controller
         return Redirect($"/ViewModels/AddPos/{empid}");
     }
 
-    public async Task<IActionResult> ViewSchedule(long empid)
+    [Route ("ViewModels/ViewSchedule/{empid}")]
+    public async Task<IActionResult> ViewSchedule(long empid, DateTime? date)
     {
         var viewmodel = new ViewModel
         {
@@ -104,6 +105,13 @@ public class ViewModelsController : Controller
                 .Where(emp => emp.Id == empid)
                 .FirstOrDefaultAsync()
         };
+        if (date.HasValue)
+        {
+            DateTime startDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, 0, 0, 0);
+            DateTime endDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, 23, 59, 59);
+            viewmodel.Employee.Schedules = viewmodel.Employee.Schedules.Where(s => s.Date > startDate && s.Date < endDate).ToList();
+        }
+        viewmodel.Employee.Schedules = viewmodel.Employee.Schedules.OrderBy(sch => sch.Date).ToList();
         return View(viewmodel);
     }
     

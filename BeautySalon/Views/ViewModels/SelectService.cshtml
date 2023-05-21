@@ -1,45 +1,39 @@
-@* @model IEnumerable<BeautySalon.Data.Models.ViewModel> *@
-@* *@
-@* @{ *@
-@*     ViewData["Title"] = "SelectService"; *@
-@* } *@
-@* <div class="container px-4 py-5" id="custom-cards"> *@
-@*     <h2 class="pb-2 border-bottom">Услуги</h2> *@
-@*     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"> *@
-@*         @foreach (var mod in Model) *@
-@*         { *@
-@*             <div class="col"> *@
-@*                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');"> *@
-@*                     <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1"> *@
-@*                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">@Html.DisplayFor(item => mod.Service.Name)</h3> *@
-@*                         <ul class="d-flex list-unstyled mt-auto"> *@
-@*                             <a asp-controller="ViewModels" asp-action="SelectTime" asp-route-cliid="@mod.Client.Id" asp-route-serid="@mod.Service.Id" class="btn btn-primary">Записаться</a> *@
-@*                         </ul> *@
-@*                     </div> *@
-@*                 </div> *@
-@*             </div> *@
-@*         } *@
-@*     </div> *@
-@* </div> *@
-
 @model BeautySalon.Data.Models.ViewModel
 
 @{
     ViewData["Title"] = "SelectService";
 }
+<h1>Запись на услугу</h1>
+<hr />
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="SelectService">
+<dl class="row">
+    <dt class = "col-sm-2">
+        Клиент
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(item=>@Model.Client.Surname)
+        @Html.DisplayFor(item=>@Model.Client.Name)
+        @Html.DisplayFor(item=>@Model.Client.FathersName)
+    </dd>
+    <dt class = "col-sm-2">
+        Услуга
+    </dt>
+    
+    <form asp-action="SelectService">
+        <dd class = "col-sm-12">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <select asp-for="Serviceprovision.Serid" class="form-control" asp-items="ViewBag.Serid" ></select>
+                <select asp-for="Serviceprovision.Serid" class="form-control" asp-items="ViewBag.Serid"></select>
             </div>
-            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
-        </form>
-    </div>
+        </dd>
+    </form>
+</dl>
+
+<div>
+    <a asp-action="Index" asp-controller="Clients">Вернуться к списку</a>
 </div>
+
 

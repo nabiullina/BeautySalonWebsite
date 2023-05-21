@@ -45,7 +45,7 @@ namespace BeautySalon.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Posid"] = new SelectList(_context.Positions, "Id", "Id", service.Posid);
+            ViewData["Pos"] = new SelectList(_context.Positions, "Id", "Name", service.Posid);
             return View(service);
         }
 
@@ -57,12 +57,12 @@ namespace BeautySalon.Controllers
                 return NotFound();
             }
 
-            var service = await _context.Services.FindAsync(id);
+            var service = await _context.Services.Include("Pos").Where(s=>s.Id==id).FirstOrDefaultAsync();
             if (service == null)
             {
                 return NotFound();
             }
-            ViewData["Posid"] = new SelectList(_context.Positions, "Id", "Id", service.Posid);
+            ViewData["Pos"] = new SelectList(_context.Positions, "Id", "Name", service.Posid);
             return View(service);
         }
 

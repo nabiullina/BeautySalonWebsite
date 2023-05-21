@@ -1,49 +1,36 @@
 @model BeautySalon.Data.Models.ViewModel
 
 @{
-    ViewData["Title"] = "AddPos";
+    ViewData["Title"] = "Редактирование должностей";
 }
 
-<h1>Edit</h1>
+<h1>Редактирование</h1>
 
-<h4>EmployeeeeeeOnPos</h4>
+<h4>Должности работника</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="AddPos">
             <div class="form-group">
+                <i>
                 @Html.DisplayFor(modelItem => modelItem.Employee.Surname)
-                @* <label asp-for="Employee.Surname" class="control-label"></label> *@
-                @* <input asp-for="Employee.Surname" class="form-control" /> *@
-                @* <span asp-validation-for="Employee.Surname" class="text-danger"></span> *@
                 @Html.DisplayFor(modelItem => modelItem.Employee.Name)
-                @* <label asp-for="Employee.Name" class="control-label"></label> *@
-                @* <input asp-for="Employee.Name" class="form-control" /> *@
-                @* <span asp-validation-for="Employee.Name" class="text-danger"></span> *@
-            
                 @Html.DisplayFor(modelItem => modelItem.Employee.FathersName)
-                @* <label asp-for="Employee.FathersName" class="control-label"></label> *@
-                @* <input asp-for="Employee.FathersName" class="form-control" /> *@
-                @* <span asp-validation-for="Employee.FathersName" class="text-danger"></span> *@
+                </i>
             </div>
             <div class="form-group">
                 @Html.DisplayFor(modelItem => modelItem.Employee.Phone)
-                @* <label asp-for="Employee.Phone" class="control-label"></label> *@
-                @* <input asp-for="Employee.Phone" class="form-control" /> *@
-                @* <span asp-validation-for="Employee.Phone" class="text-danger"></span> *@
             </div>
             <div class="form-group">
                 @foreach (var itemPos in Model.Employee.EmployeesOnPositions)
                 {
                     <li>
                         <a asp-action="DelPos" asp-route-empid="@itemPos.Empid" asp-route-posid="@itemPos.Posid">Удалить</a>
-                        @* <a asp-action="DelPos" asp-route="@itemPos.Empid">кнопка</a> *@
                         @Html.DisplayFor(modelItem => itemPos.Pos.Name)
                     </li>
                 }
             </div>
             <div class="form-group">
-                @* <label asp-for="EmployeesOnPosition.Posid" class="control-label"></label> *@
                 Должность
                 <select asp-for="EmployeesOnPosition.Posid" class="form-control" asp-items="ViewBag.Pos"></select>
                 <span asp-validation-for="EmployeesOnPosition.Posid" class="text-danger"></span>
@@ -58,7 +45,7 @@
 </div>
 
 <div>
-    <a asp-action="Index" asp-controller="Employees">Back to List</a>
+    <a asp-action="Index" asp-controller="Employees">Вернуться к списку</a>
 </div>
 
 @section Scripts {
